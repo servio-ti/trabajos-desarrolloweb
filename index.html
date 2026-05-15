@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora Web</title>
+
+  <!-- Estilos externos -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="calc-wrapper">
+
+    <!-- ── Header ── -->
+    <div class="calc-header">
+      <h1>⬡ Calculadora</h1>
+    </div>  
+
+    <!-- ── Display ── -->
+    <div class="display">
+      <div class="expression" id="expression"></div>
+      <div class="result"     id="result">0</div>
+    </div>
+
+    <!-- ── Botones ── -->
+    <div class="btn-grid">
+
+      <!-- Fila 1: funciones especiales + división -->
+      <button class="btn btn-special" data-action="clear">AC</button>
+      <button class="btn btn-special" data-action="sign">+/−</button>
+      <button class="btn btn-special" data-action="percent">%</button>
+      <button class="btn btn-op"      data-action="op" data-value="÷">÷</button>
+
+      <!-- Fila 2 -->
+      <button class="btn btn-num" data-action="num" data-value="7">7</button>
+      <button class="btn btn-num" data-action="num" data-value="8">8</button>
+      <button class="btn btn-num" data-action="num" data-value="9">9</button>
+      <button class="btn btn-op"  data-action="op"  data-value="×">×</button>
+
+      <!-- Fila 3 -->
+      <button class="btn btn-num" data-action="num" data-value="4">4</button>
+      <button class="btn btn-num" data-action="num" data-value="5">5</button>
+      <button class="btn btn-num" data-action="num" data-value="6">6</button>
+      <button class="btn btn-op"  data-action="op"  data-value="−">−</button>
+
+      <!-- Fila 4 -->
+      <button class="btn btn-num" data-action="num" data-value="1">1</button>
+      <button class="btn btn-num" data-action="num" data-value="2">2</button>
+      <button class="btn btn-num" data-action="num" data-value="3">3</button>
+      <button class="btn btn-op"  data-action="op"  data-value="+">+</button>
+
+      <!-- Fila 5: DEL (ancho doble), decimal, igual -->
+      <button class="btn btn-del btn-wide" data-action="backspace">⌫ DEL</button>
+      <button class="btn btn-num"          data-action="decimal">.</button>
+      <button class="btn btn-eq"           data-action="equals">=</button>
+
+      <!-- Fila 6: 0 (ancho doble), √, x² -->
+      <button class="btn btn-num btn-wide" data-action="num" data-value="0">0</button>
+      <button class="btn btn-special"      data-action="sqrt">√</button>
+      <button class="btn btn-special"      data-action="square">x²</button>
+
+    </div>
+
+    <!-- ── Historial ── -->
+    <div class="history-toggle">
+      <button id="histBtn">▾ HISTORIAL</button>
+    </div>
+    <div class="history-panel" id="histPanel">
+      <div class="history-inner" id="histList">
+        <div class="history-empty">Sin operaciones aún.</div>
+      </div>
+    </div>
+
+  </div><!-- /.calc-wrapper -->
+
+  <!-- Lógica externa -->
+  <script src="script.js"></script>
+</body>
+</html>
